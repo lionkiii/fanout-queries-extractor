@@ -1,0 +1,184 @@
+Fanout Queries Extractor reveals the hidden search queries and cited URLs behind every ChatGPT and Claude answer — the raw data you need for Generative Engine Optimization (GEO), AI SEO, and AI visibility tracking. See exactly which fan-out queries the AI generated from a prompt, which sources it retrieved, which URLs it actually cited, and how your domain stacks up. 100% local: no account, no server, no data ever leaves your browser.
+
+━━━━━━━━━━━━━━━━━━━━━━
+WHAT IS QUERY FAN-OUT?
+━━━━━━━━━━━━━━━━━━━━━━
+
+Query fan-out is the technique AI search systems use to answer complex questions. Instead of running one search, the AI breaks your prompt into multiple sub-queries — related topics, implicit questions, comparisons, recency checks, and reformulations — then searches them all in parallel and synthesizes the results into a single answer.
+
+Google AI Mode does this with Gemini. ChatGPT Search does it every time it browses the web. Claude does it when web search is enabled. Research shows a typical prompt fans out into 9–11 sub-queries, and deep research runs can trigger hundreds of searches from a single question.
+
+Here's the problem: those fan-out queries are invisible. They never show up in Google Search Console, keyword tools report them as zero-volume, and no analytics platform captures them. Yet they decide which pages get retrieved, which brands get cited, and who wins AI visibility.
+
+This extension makes them visible.
+
+━━━━━━━━━━━━━━━━━━━━━━
+WHAT THE EXTENSION EXTRACTS
+━━━━━━━━━━━━━━━━━━━━━━
+
+Open any ChatGPT or Claude conversation, click Capture Full JSON, and get a structured breakdown of the entire conversation:
+
+✔ FAN-OUT QUERIES — every sub-query the AI generated from each prompt, deduplicated and grouped per question. This is the actual query set the model searched, not a guess.
+
+✔ CITED URLS — the sources the AI surfaced in its answer: inline citations, footnotes, and the canonical sources list. These are the highest-value GEO signal, because a citation means the model actually used the page.
+
+✔ RETRIEVED URLS — the full candidate pool the search step returned but the model did NOT cite. Comparing retrieved vs. cited shows you pages the AI saw and rejected — the exact gap to close.
+
+✔ SEARCH INTENT CLASSIFICATION — ChatGPT's internal probability scores for whether a prompt needs simple search, complex search, or no search at all, plus whether search actually triggered.
+
+✔ SOURCE METADATA — page titles, snippets, domains, attribution, and publication dates for every URL.
+
+━━━━━━━━━━━━━━━━━━━━━━
+BUILT-IN GEO ANALYTICS
+━━━━━━━━━━━━━━━━━━━━━━
+
+Everything is computed locally, instantly, on your device:
+
+★ CITATION RATE — of all sources retrieved, how many were actually cited in the answer. The core citation-vs-retrieval metric for AI search optimization.
+
+★ TOP CITED DOMAINS LEADERBOARD — which domains dominate the AI's citations across your captured conversations, with counts and percentage share.
+
+★ SOURCE TYPE DISTRIBUTION — how citations split across Reddit, forums, YouTube and video, social media, review sites (G2, Capterra, Product Hunt), news outlets, reference sites (Wikipedia), and academic sources. Instantly see whether the AI prefers community content or editorial authority for your topic.
+
+★ CONTENT ANGLE ANALYSIS — each cited page is classified as First-hand / Community, Third-party Review, Editorial / Authority, Multimodal / Video, or Brand — so content writers know exactly which angle the AI rewarded for a given query.
+
+★ CONTENT FRESHNESS — publication-date breakdown (last 24 hours, last week, last month, older) plus average content age, so you can see how much recency matters in your niche.
+
+★ TRACK YOUR DOMAIN — enter your own domain and get your citation count, total mentions, citation share, and mention share across every conversation you've captured. Know immediately if the model saw your site but didn't surface it.
+
+★ SEARCH INTENT DASHBOARD — high / medium / no-search probability distribution and search trigger rate across all captured prompts.
+
+━━━━━━━━━━━━━━━━━━━━━━
+EXPORT EVERYTHING
+━━━━━━━━━━━━━━━━━━━━━━
+
+▸ COPY — a tab-separated table straight to your clipboard, ready to paste into Google Sheets or Excel.
+▸ CSV — a 23-column export including conversation, question, fan-out queries, search intent, citation status, source type, content angle, ref type, position, snippet status, content age, freshness bucket, domain, attribution, title, URL, publish date, and snippet.
+▸ JSON — the full structured dataset for your own pipelines, dashboards, or LLM analysis.
+
+━━━━━━━━━━━━━━━━━━━━━━
+WHO IS THIS FOR?
+━━━━━━━━━━━━━━━━━━━━━━
+
+● SEO PROFESSIONALS moving from classic rankings to AI search optimization. Ranking #1 for a single keyword isn't enough when the AI fans out into a dozen sub-queries — you need to know what those sub-queries are.
+
+● GEO / AEO SPECIALISTS doing generative engine optimization or answer engine optimization who need real fan-out data instead of synthetic keyword guesses.
+
+● CONTENT MARKETERS planning topic clusters. The fan-out queries for a prompt are a ready-made cluster map: every sub-query is a subtopic your pillar page should cover.
+
+● BRAND & PR TEAMS tracking AI visibility, brand mentions, and citation share across ChatGPT and Claude answers in their category.
+
+● AGENCIES running AI visibility audits for clients — capture conversations, export the CSV, and deliver citation-share reports without any subscription.
+
+● PUBLISHERS & AFFILIATE SITES checking whether the AI cites them, cites competitors, or leans on Reddit threads and review aggregators instead.
+
+● RESEARCHERS & DATA ANALYSTS studying how large language models select, retrieve, and cite web sources.
+
+━━━━━━━━━━━━━━━━━━━━━━
+HOW TO USE IT (30 SECONDS)
+━━━━━━━━━━━━━━━━━━━━━━
+
+1. Open a ChatGPT (chatgpt.com) or Claude (claude.ai) conversation that used web search.
+2. Click the extension icon, then click Capture Full JSON.
+3. The tab reloads once so the extension can capture the conversation's own JSON response.
+4. Reopen the popup — questions, fan-out queries, cited URLs, and analytics are all there.
+5. Copy, export CSV/JSON, or track your domain.
+
+Prefer manual control? Paste any conversation JSON from DevTools → Network into the popup and click Extract. Both workflows produce identical results.
+
+Pro tip for GEO research: ask ChatGPT or Claude the questions your customers actually ask ("best CRM for small business", "is X better than Y", "how to choose a payment gateway in India"), then capture the conversation. The fan-out queries are your AI-era keyword research; the cited URLs are your competitive set.
+
+━━━━━━━━━━━━━━━━━━━━━━
+WHY FAN-OUT DATA CHANGES YOUR SEO STRATEGY
+━━━━━━━━━━━━━━━━━━━━━━
+
+AI search flipped the model. When someone asks ChatGPT for a recommendation, the answer is assembled from sources chosen across many parallel sub-queries — and most users never click through. Winning means being cited, and being cited means covering the sub-queries, not just the head term.
+
+With real fan-out data you can:
+
+→ BUILD TOPIC CLUSTERS FROM ACTUAL AI BEHAVIOR — each fan-out query is a section your content should answer. Cover the disambiguations, entity attributes, comparison criteria, and trust-signal queries the model actually generates.
+
+→ CLOSE THE RETRIEVED-BUT-NOT-CITED GAP — if your page appears in the retrieval pool but never in citations, the model saw you and passed. Fix depth, structure, freshness, or E-E-A-T signals and re-test.
+
+→ CHOOSE THE RIGHT CONTENT ANGLE — if 60% of citations for your topic are Reddit and forum threads, community presence beats another blog post. If editorial sources dominate, invest in authority content.
+
+→ MATCH THE FRESHNESS BAR — if cited sources average 30 days old, yearly updates won't cut it.
+
+→ MEASURE SHARE OF VOICE IN AI ANSWERS — track your citation share over time, per topic, against the domains that keep beating you.
+
+→ MONITOR COMPETITORS — capture the same prompts monthly and watch how the citation set shifts.
+
+━━━━━━━━━━━━━━━━━━━━━━
+AN AI SEO TOOL BUILT FOR AI SEARCH
+━━━━━━━━━━━━━━━━━━━━━━
+
+Most AI SEO tools use artificial intelligence to automate old-school SEO — AI-powered keyword research, content scoring, rank tracking. Useful, but they optimize for a search engine that is changing underneath them. This extension attacks the other side of AI in SEO: it shows you how AI-powered search engines themselves behave, so you can optimize for the systems that now answer your customers directly.
+
+That makes it a different kind of entry in any AI SEO tools comparison:
+
+▸ Classic AI-powered SEO software predicts which keywords might matter. This shows the exact queries an AI actually ran.
+▸ AI SEO automation platforms score your content against competitors. This shows which competitor URLs the AI truly cited — and which it retrieved and rejected.
+▸ Machine learning SEO tools model click behavior. This measures citation behavior, the metric that decides AI visibility.
+
+Use it alongside your existing stack: feed the extracted fan-out queries into your AI-powered keyword research workflow, use the cited-domain leaderboard for your AI SEO audit, and fold citation share into your SEO automation reporting. Whether you're an AI SEO agency running audits for clients, an in-house team implementing an artificial intelligence SEO strategy, or a beginner learning AI search engine optimization, the workflow is the same: capture real conversations, extract real data, act on real patterns. It's one of the simplest ways to improve SEO with AI, because the intelligence isn't simulated — it comes straight from the AI search engine you're trying to win.
+
+━━━━━━━━━━━━━━━━━━━━━━
+TURN AI CITATIONS INTO AI TRAFFIC
+━━━━━━━━━━━━━━━━━━━━━━
+
+The end goal isn't data — it's AI website traffic. ChatGPT, Claude, Perplexity, and Google AI Mode already refer measurable, high-intent visitors, and those referrals convert well because the AI pre-qualified the click. Getting that traffic requires one thing: being cited. This extension exists to find the patterns that get you cited.
+
+The repeatable loop marketers run with it:
+
+1. CAPTURE the prompts your buyers actually ask, across your money topics.
+2. EXTRACT the fan-out queries and the full cited vs. retrieved source set.
+3. FIND THE PATTERN — which domains win, which content angle wins (community vs. review vs. editorial), what freshness bar applies, which sub-queries your site never answers.
+4. PUBLISH OR FIX content that matches the winning pattern: cover the fan-out sub-queries, match the angle, meet the freshness bar, strengthen E-E-A-T signals.
+5. RE-CAPTURE the same prompts weeks later and track your citation share climbing — AI SEO tracking with ground-truth data instead of estimates.
+
+That loop is how AI for SEO ranking actually works in the generative era: you're not chasing position #1, you're engineering your way into the answer itself. Teams use it for AI SEO A/B testing too — publish two angles for the same fan-out cluster, re-run the prompts, and keep whichever version the model starts citing. Every citation you win compounds: it drives direct AI referral traffic, reinforces your brand as the model's trusted source for the topic, and shows up again in future answers.
+
+━━━━━━━━━━━━━━━━━━━━━━
+PRIVACY: 100% LOCAL, ALWAYS
+━━━━━━━━━━━━━━━━━━━━━━
+
+✔ No account, no login, no subscription
+✔ No telemetry, no tracking, no ads
+✔ No extension-owned servers — nothing is uploaded anywhere
+✔ All parsing and analytics run entirely in your browser
+✔ Data is stored only in Chrome's local storage on your device
+✔ Capture is user-triggered only — the extension never monitors your browsing and disarms itself automatically after each capture
+✔ One-click Clear wipes everything
+✔ Minimal permissions: storage and scripting on chatgpt.com, chat.openai.com, and claude.ai only
+
+The optional "Buy me a coffee" button simply opens a Razorpay page in a new tab — the extension never touches payment data. Every feature is free; nothing is gated.
+
+━━━━━━━━━━━━━━━━━━━━━━
+FREQUENTLY ASKED QUESTIONS
+━━━━━━━━━━━━━━━━━━━━━━
+
+Q: What are fan-out queries exactly?
+A: When you ask an AI assistant a question, it silently expands your prompt into multiple search queries — reformulations, related topics, comparisons, implicit questions — and searches them all. Those hidden sub-queries are fan-out queries. This extension extracts the real ones from your conversations.
+
+Q: Does it work with Google AI Mode or AI Overviews?
+A: It currently supports ChatGPT and Claude, where full conversation data is accessible. The fan-out patterns you learn transfer directly to Google AI Mode, since all major AI search systems use the same query decomposition approach.
+
+Q: Do I need ChatGPT Plus or Claude Pro?
+A: No. It works with any conversation you can open in your browser, free or paid, as long as the conversation used web search.
+
+Q: Why do some conversations show no URLs?
+A: The AI only searches when it decides the prompt needs it. The extension shows the search-intent classification either way, so you can see why search did or didn't trigger.
+
+Q: Is this allowed? Is my data safe?
+A: The extension only reads the conversation data your own browser already loaded, on your own account, when you click capture. Nothing is sent anywhere — processing is fully local and the source is auditable.
+
+Q: How is this different from AI visibility SaaS tools?
+A: Enterprise platforms track brand mentions at scale by running their own prompts. This extension gives you ground-truth data from YOUR actual conversations — every query, every URL, retrieved and cited — for free, with full CSV/JSON export.
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+Query fan-out is how AI search actually works. Stop guessing which queries matter and which sources win — extract them.
+
+Install Fanout Queries Extractor and see what ChatGPT and Claude really search.
+
+Keywords: query fan-out, fanout queries, ChatGPT citations, Claude citations, AI citations extractor, generative engine optimization, GEO tool, AEO, AI SEO tool, AI-powered SEO, AI search engine optimization, SEO automation with AI, artificial intelligence for SEO, AI SEO audit, AI SEO tracking, AI keyword research, LLM SEO, AI visibility, AI website traffic, cited sources, citation tracking, AI Overviews, Google AI Mode, brand mentions in AI, share of voice AI, ChatGPT URL extractor.

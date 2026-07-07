@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Fanout Queries Extractor – ChatGPT & Claude Citations",
+  "version": "2.4.0",
+  "minimum_chrome_version": "114",
+  "description": "Extract cited URLs and fan-out queries from ChatGPT & Claude conversations. 100% local — no data leaves your browser.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://claude.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

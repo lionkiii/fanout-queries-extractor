@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI URL Extractor</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="brand">
+        <img src="icon48.png" alt="" class="brand-icon">
+        <div>
+          <h1>Fanout Queries Extractor</h1>
+          <span class="subtitle">Fanout citations from ChatGPT &amp; Claude</span>
+        </div>
+      </div>
+      <a class="coffee-btn" href="https://razorpay.me/@ishort" target="_blank" rel="noopener noreferrer"
+        title="Support the developer">☕ Buy me a coffee</a>
+    </header>
+
+    <section class="stats" aria-label="Extraction summary">
+      <div class="stat-box">
+        <div class="stat-number" id="urlCount">0</div>
+        <div class="stat-label">URLs Found</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" id="conversationCount">0</div>
+        <div class="stat-label">Conversations</div>
+      </div>
+    </section>
+
+    <section class="capture-panel" aria-label="Extract conversation URLs">
+      <div class="panel-header">
+        <div>
+          <h2>Extract</h2>
+          <p>Capture the active conversation or paste a saved Network response.</p>
+        </div>
+      </div>
+
+      <fieldset class="platform-selector">
+        <legend class="visually-hidden">Platform</legend>
+        <label class="platform-label">
+          <input type="radio" name="platform" value="chatgpt" checked>
+          <span>ChatGPT</span>
+        </label>
+        <label class="platform-label">
+          <input type="radio" name="platform" value="claude">
+          <span>Claude</span>
+        </label>
+      </fieldset>
+
+      <div class="extract-actions">
+        <button id="fetchCurrentTabBtn" class="btn btn-primary" type="button">Capture Full JSON</button>
+        <button id="extractFromJsonBtn" class="btn" type="button">Extract URLs from JSON</button>
+      </div>
+
+      <label class="visually-hidden" for="jsonInput">Conversation JSON</label>
+      <textarea id="jsonInput" rows="6" autocomplete="off" spellcheck="false"
+        placeholder="Paste the Network response JSON here..."></textarea>
+
+      <details class="manual-instructions">
+        <summary>Capture notes</summary>
+        <ol>
+          <li>Open a ChatGPT or Claude conversation in the active tab.</li>
+          <li>Click <strong>Capture Full JSON</strong>. The tab reloads once so the extension can capture the response.</li>
+          <li>If capture fails, copy the Network response JSON manually and paste it above.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="actions-panel" aria-label="Data actions">
+      <div class="action-buttons">
+        <button id="copyTableBtn" class="btn" type="button" aria-label="Copy table to clipboard">Copy</button>
+        <button id="exportCsvBtn" class="btn" type="button" aria-label="Export as CSV">CSV</button>
+        <button id="exportJsonBtn" class="btn" type="button" aria-label="Export as JSON">JSON</button>
+        <button id="clearBtn" class="btn btn-danger" type="button">Clear</button>
+      </div>
+    </section>
+
+    <!-- Domain Leaderboard -->
+    <section id="domainLeaderboard" class="domain-leaderboard" aria-label="Top cited domains" hidden>
+      <h4>Top Cited Domains</h4>
+      <div id="domainList" class="domain-list"></div>
+    </section>
+
+    <!-- Analytics Dashboard -->
+    <section id="analyticsDashboard" class="analytics-dashboard" aria-label="Analytics dashboard" hidden>
+      <div class="analytics-header">
+        <h3>Analytics</h3>
+        <button id="toggleAnalytics" class="btn btn-toggle" type="button" aria-expanded="true"
+          aria-controls="analyticsBody">Hide</button>
+      </div>
+
+      <div id="analyticsBody">
+        <div class="analytics-card">
+          <h4>Your Domain Performance</h4>
+          <div class="domain-track-input">
+            <label class="visually-hidden" for="yourDomainInput">Your domain</label>
+            <input type="text" id="yourDomainInput" placeholder="e.g. example.com" autocomplete="off"
+              spellcheck="false" />
+            <button id="trackDomainBtn" class="btn btn-small" type="button">Track</button>
+          </div>
+          <div id="yourDomainStats" class="stats-grid" hidden></div>
+        </div>
+
+        <div class="analytics-card">
+          <h4>Citation vs. Retrieval</h4>
+          <div id="citationStats" class="stats-grid"></div>
+        </div>
+
+        <div class="analytics-card">
+          <h4>Source Type Distribution</h4>
+          <div id="sourceTypeChart" class="chart-container"></div>
+        </div>
+
+        <div class="analytics-card">
+          <h4>Content Freshness</h4>
+          <div id="freshnessStats" class="stats-grid"></div>
+        </div>
+
+        <div class="analytics-card">
+          <h4>Search Intent Analysis</h4>
+          <div id="searchIntentStats" class="stats-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="url-list" id="urlList" aria-live="polite" aria-label="Extracted URLs">
+      <div class="placeholder">
+        <p>No URLs extracted yet.</p>
+        <p class="hint">Capture a conversation or paste JSON to begin.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>v2.3.0</span>
+      <a href="PRIVACY.md" target="_blank" rel="noopener">Privacy</a>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="analytics.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+# Real extracted conversation data — never publish
+ai urls output.json
+ai-urls-*.csv
+
+# Build artifacts
+dist/
+ai-url-extractor.zip
+
+# Local tooling / OS
+.claude/
+.DS_Store
