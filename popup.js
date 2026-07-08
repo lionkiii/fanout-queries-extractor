@@ -916,12 +916,19 @@ async function extractFromClaude(data) {
             const collectFromContent = (content) => {
                 if (!content || typeof content !== 'object') return;
 
-                // Fan-out queries: current Claude stores each search as a tool_use whose
-                // input carries either a single `query` or an array of `queries`.
-                if (content.type === 'tool_use' && isSearchTool(content.name)) {
+                // Fan-out queries: Claude stores each search call as a `tool_use` or —
+                // for server-side tools like web search — a `server_tool_use` block.
+                // The input carries either a single `query` or an array of `queries`.
+                const isToolCall = content.type === 'tool_use' || content.type === 'server_tool_use';
+                if (isToolCall && isSearchTool(content.name)) {
                     const input = content.input || {};
                     if (input.query != null) pushQuery(input.query);
                     if (Array.isArray(input.queries)) input.queries.forEach(pushQuery);
+                } else if (isToolCall && content.input && typeof content.input.query === 'string') {
+                    // Unknown tool name carrying a query-shaped input — collect it and
+                    // surface the name so future renames are visible instead of silent.
+                    console.debug('[FanoutExtractor] query from unrecognized tool:', content.name);
+                    pushQuery(content.input.query);
                 }
 
                 // Search results: Claude has used several shapes — a tool_result whose
@@ -939,6 +946,24 @@ async function extractFromClaude(data) {
                         ? content.content
                         : (content.url ? [content] : []);
                     items.forEach(pushUrl);
+                }
+
+                // Search calls and results can be nested inside container blocks
+                // (tool_result content, thinking / research structures). Recurse into
+                // any child that looks like a content block so nested searches are
+                // collected too. pushQuery/pushUrl dedupe, so re-visits are harmless.
+                for (const key of Object.keys(content)) {
+                    if (key === 'input') continue; // tool inputs handled above
+                    const val = content[key];
+                    if (Array.isArray(val)) {
+                        val.forEach((child) => {
+                            if (child && typeof child === 'object' && (child.type || child.content)) {
+                                collectFromContent(child);
+                            }
+                        });
+                    } else if (val && typeof val === 'object' && val.type) {
+                        collectFromContent(val);
+                    }
                 }
             };
 
